@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:padding="10dp">
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/new_plant_name"
+                android:id="@+id/editTextNickname"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="@string/new_plant_fullname"
+                android:id="@+id/editTextFullname"/>
+
+        <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="200dp"
+                    android:hint="@string/new_plant_last_watered"
+                    android:id="@+id/editTextLastWater"/>
+
+            <Button style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select"
+                    android:id="@+id/btn_date"/>
+
+        </GridLayout>
+
+        <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="@string/select_photo"
+                    android:minWidth="200dp"
+                    android:maxWidth="200dp"
+                    android:id="@+id/textViewPhotoPath"/>
+
+            <Button style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select"
+                    android:id="@+id/btn_select_photo"/>
+
+        </GridLayout>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="@string/new_plant_days_to_water"
+                    android:id="@+id/textViewNextWater"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:id="@+id/textViewValueNextWater"/>
+
+        </LinearLayout>
+
+
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:inputType="textPersonName"
+                android:hint="@string/new_plant_sunlight"
+                android:id="@+id/editTextSun"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:inputType="textPersonName"
+                android:hint="@string/new_plant_water"
+                android:id="@+id/editTextWater"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:inputType="textPersonName"
+                android:hint="@string/new_plant_soil"
+                android:id="@+id/editTextSoil"/>
+
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:inputType="textPersonName"
+                android:hint="@string/new_plant_warnings"
+                android:id="@+id/editTextWarning"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <Button style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="10dp"
+                    android:text="@string/save"
+                    android:id="@+id/btn_save"/>
+
+            <Button style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/btn_save"
+                    android:layout_margin="10dp"
+                    android:text="@string/cancel"
+                    android:id="@+id/btn_cancel"/>
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>

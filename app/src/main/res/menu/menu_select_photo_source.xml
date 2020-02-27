@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.planttracker.view.ui.MainActivity"
+      android:layout_height="wrap_content"
+      android:layout_width="match_parent">
+
+    <item android:id="@+id/action_take_new"
+          android:title="@string/take_new"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+
+    <item android:id="@+id/action_select_existing"
+          android:title="@string/select_existing"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+</menu>

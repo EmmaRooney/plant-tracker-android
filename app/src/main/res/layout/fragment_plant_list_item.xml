@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:paddingBottom="10dp"
+              tools:context=".view.adapter.PlantListAdapter">
+
+    <androidx.cardview.widget.CardView
+            style="@style/Widget.MaterialComponents.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/plant_card"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="2dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/colorWhite">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.card.MaterialCardView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/plant_photo_card"
+                    app:cardCornerRadius="50dp"
+                    app:strokeColor="@color/colorWhite">
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/plant_photo"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/settings_icon_coloured" />
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/plant_nickname"
+                android:layout_toEndOf="@id/plant_photo_card"
+                android:layout_toStartOf="@id/until_water_constant"
+                android:layout_alignTop="@id/plant_photo_card"
+                android:textSize="22sp"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/last_watered"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/plant_photo_card"
+                android:layout_below="@id/plant_nickname"
+                android:textSize="14sp"
+            />
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="15dp"
+                    android:id="@+id/days_until_water"
+                    android:minWidth="40dp"
+                    android:textAlignment="center"
+                    android:textSize="32sp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_below="@id/days_until_water"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/until_water_constant"
+                android:text="days until water"
+                android:width="70dp"
+                android:textSize="12sp"
+                android:textAlignment="center"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
