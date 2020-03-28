@@ -15,10 +15,6 @@ class WaterCheckerWorker(private val appContext: Context, workerParameters: Work
 
         // decrease days to water by 1
         PlantDatabase.getInstance(appContext).plantDao().decreaseDaysToWater()
-        Log.d("WORKERCHECK", "doing work")
-        with(NotificationManagerCompat.from(appContext)) {
-            notify(2, NotificationUtil.createNotification(appContext,"Decreased days to water", Calendar.getInstance().time.toString()).build())
-        }
 
         // check if any plants need watering and if so, send a notification
         if (PlantDatabase.getInstance(appContext).plantDao().searchPlantsNeedWatering() > 0) {
