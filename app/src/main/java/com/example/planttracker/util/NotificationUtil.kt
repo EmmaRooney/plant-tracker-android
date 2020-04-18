@@ -16,12 +16,12 @@ class NotificationUtil {
 
         private const val CHANNEL_ID = "PLANT_WATER"
 
-        fun createNotificationChannel(context: Context) {
+        fun createNotificationChannel(context: Context, channelName: String, channelDesc: String) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 // create the notification channel
                 val channel = NotificationChannel(
-                    CHANNEL_ID, R.string.channel_name.toString(), NotificationManager.IMPORTANCE_DEFAULT).apply {
-                    description = R.string.channel_description.toString()
+                    CHANNEL_ID, channelName, NotificationManager.IMPORTANCE_DEFAULT).apply {
+                    description = channelDesc
                 }
                 // register the channel with the system
                 val notificationManager: NotificationManager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager

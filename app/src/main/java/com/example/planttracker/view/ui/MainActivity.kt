@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        NotificationUtil.createNotificationChannel(this)
+        NotificationUtil.createNotificationChannel(this, getString(R.string.channel_name), getString(R.string.channel_description))
 
         // Background worker to check plant watering needs once a day
         val waterCheckerWorkerRequest = PeriodicWorkRequestBuilder<WaterCheckerWorker>(1, DAYS).build()
