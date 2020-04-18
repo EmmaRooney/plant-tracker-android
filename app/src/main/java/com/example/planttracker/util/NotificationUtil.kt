@@ -36,7 +36,7 @@ class NotificationUtil {
             val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
 
             return NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.settings_icon_coloured)
+                .setSmallIcon(R.drawable.plant)
                 .setContentTitle(title)
                 .setContentText(msg)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)

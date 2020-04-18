@@ -25,7 +25,6 @@ import com.example.planttracker.util.ImageUtil
 import com.example.planttracker.viewmodel.PlantViewModel
 import com.example.planttracker.viewmodel.PlantViewModelFactory
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_new_plant.*
 import kotlinx.android.synthetic.main.dialog_confirm_action.*
 import kotlinx.android.synthetic.main.dialog_confirm_action.dialog_btn_cancel
 import kotlinx.android.synthetic.main.dialog_confirm_action.dialog_btn_ok
@@ -116,7 +115,7 @@ class PlantDetailFragment : Fragment(){
         soil.text = sharedViewModel.selectedPlant?.soilReq
         warnings.text = sharedViewModel.selectedPlant?.warnings
 
-        if (sharedViewModel.selectedPlant?.photoFilepath != null) {
+        if (!sharedViewModel.selectedPlant?.photoFilepath.isNullOrBlank()) {
             plant_photo.setImageBitmap(ImageUtil.loadPhoto(sharedViewModel.selectedPlant!!.photoFilepath!!))
         }
 

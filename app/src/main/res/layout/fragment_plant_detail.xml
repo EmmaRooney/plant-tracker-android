@@ -24,8 +24,8 @@
                     android:layout_gravity="center"
                     android:id="@+id/plant_photo"
                     android:scaleType="centerCrop"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/settings_icon_coloured"/>
+                    android:adjustViewBounds="false"
+                    android:src="@drawable/plant"/>
 
         </com.google.android.material.card.MaterialCardView>
 

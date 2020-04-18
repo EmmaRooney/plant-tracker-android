@@ -10,7 +10,6 @@ import android.icu.util.Calendar
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
 import com.example.planttracker.R
@@ -169,6 +168,9 @@ class NewPlantActivity : AppCompatActivity(), NumberPickerDialog.OnOkButtonClick
 
                 textViewPhotoPath.text = file.path
             }
+        }
+        else {
+            textViewPhotoPath.text = null
         }
     }
 

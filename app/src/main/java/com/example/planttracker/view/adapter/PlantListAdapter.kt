@@ -49,7 +49,7 @@ class PlantListAdapter internal constructor(private val context: Context, privat
         holder.lastWaterView.text = currentPlant.lastWatered
         holder.daysUntilWaterView.text = currentPlant.nextWater.toString()
 
-        if (currentPlant.photoFilepath != null) {
+        if (!currentPlant.photoFilepath.isNullOrBlank()) {
             holder.plantImageView.setImageBitmap(ImageUtil.loadPhoto(currentPlant.photoFilepath))
         }
 

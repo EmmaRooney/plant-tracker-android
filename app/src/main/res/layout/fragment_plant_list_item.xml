@@ -28,15 +28,15 @@
                     android:layout_height="50dp"
                     android:layout_margin="10dp"
                     android:id="@+id/plant_photo_card"
-                    app:cardCornerRadius="50dp"
+                    app:cardCornerRadius="25dp"
                     app:strokeColor="@color/colorWhite">
                 <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:id="@+id/plant_photo"
-                        android:scaleType="centerCrop"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/settings_icon_coloured" />
+                        android:scaleType="centerInside"
+                        android:adjustViewBounds="false"
+                        android:src="@drawable/plant" />
             </com.google.android.material.card.MaterialCardView>
 
 
