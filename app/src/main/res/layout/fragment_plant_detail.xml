@@ -95,229 +95,255 @@
                     android:layout_marginEnd="5dp"
                     android:scaleType="fitCenter"
                     android:background="@color/colorBackground"
-                    android:src="@drawable/bin"
+                    android:src="@drawable/rubbish"
                     android:id="@+id/btn_delete_plant"/>
 
             <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginStart="5dp"
-                    android:scaleType="fitCenter"
-                    android:background="@color/colorBackground"
-                    android:src="@drawable/pen"
-                    android:id="@+id/btn_edit_plant"/>
+                android:id="@+id/btn_edit_plant"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:padding="5dp"
+                android:background="@color/colorBackground"
+                android:scaleType="fitCenter"
+                android:src="@drawable/pencil" />
 
             <ImageButton
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center_horizontal"
-                    android:padding="4dp"
                     android:layout_marginStart="5dp"
                     android:scaleType="fitCenter"
                     android:background="@color/colorBackground"
-                    android:src="@drawable/water"
+                    android:src="@drawable/watering_can"
                     android:id="@+id/btn_water_plant"/>
 
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:minWidth="20dp"
+                android:src="@drawable/last_water"
+                android:id="@+id/last_watered_icon"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="@string/new_plant_last_watered"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    android:id="@+id/last_watered"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/last_watered"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_toEndOf="@id/last_watered_icon"
+                android:layout_alignTop="@id/last_watered_icon"
+                android:layout_alignBottom="@id/last_watered_icon"
+                android:gravity="center_vertical"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:minWidth="20dp"
+                android:src="@drawable/next_water"
+                android:id="@+id/next_water_icon"/>
 
             <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="@string/new_plant_days_to_water"/>
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:textSize="18sp"
-                    android:id="@+id/next_water_days"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/next_water_days"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_toEndOf="@id/next_water_icon"
+                android:layout_alignTop="@id/next_water_icon"
+                android:layout_alignBottom="@id/next_water_icon"
+                android:gravity="center_vertical"
+                android:textSize="18sp" />
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="18sp"
-                    android:text="@string/new_plant_sunlight"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:minWidth="20dp"
+                android:src="@drawable/sun"
+                android:id="@+id/sun_icon"/>
 
             <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@id/sun_icon"
+                android:layout_alignTop="@id/sun_icon"
+                android:layout_alignBottom="@id/sun_icon"
+                android:gravity="center_vertical">
 
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textSize="18sp"
-                        android:id="@+id/sunlight"/>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:id="@+id/sunlight"/>
 
                 <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="0dp"
-                        android:background="@android:color/transparent"
-                        android:textSize="18sp"
-                        android:visibility="gone"
-                        android:id="@+id/edit_sunlight"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:id="@+id/edit_sunlight"/>
 
             </RelativeLayout>
 
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_vertical">
 
-        </LinearLayout>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:minWidth="20dp"
+                android:src="@drawable/water"
+                android:id="@+id/water_icon"/>
 
-        <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_toEndOf="@id/water_icon"
+                android:layout_alignTop="@id/water_icon"
+                android:layout_alignBottom="@id/water_icon"
+                android:gravity="center_vertical">
 
-            <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:text="@string/new_plant_water"/>
-
-            <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textSize="18sp"
-                        android:id="@+id/water"/>
+                    android:id="@+id/water"/>
 
                 <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="0dp"
-                        android:background="@android:color/transparent"
-                        android:textSize="18sp"
-                        android:visibility="gone"
-                        android:id="@+id/edit_water"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:id="@+id/edit_water"/>
 
             </RelativeLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:minWidth="20dp"
+                android:src="@drawable/fertilizer"
+                android:id="@+id/soil_icon"/>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_toEndOf="@id/soil_icon"
+                android:layout_alignTop="@id/soil_icon"
+                android:layout_alignBottom="@id/soil_icon"
+                android:gravity="center_vertical">
 
-            <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:text="@string/new_plant_soil"/>
-
-            <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textSize="18sp"
-                        android:id="@+id/soil"/>
+                    android:id="@+id/soil"/>
 
                 <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:padding="0dp"
-                        android:background="@android:color/transparent"
-                        android:textSize="18sp"
-                        android:visibility="gone"
-                        android:id="@+id/edit_soil"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:id="@+id/edit_soil"/>
 
             </RelativeLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
-        <LinearLayout
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:minWidth="20dp"
+                android:src="@drawable/alert"
+                android:id="@+id/warning_icon"/>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="20dp">
+                android:layout_toEndOf="@id/warning_icon"
+                android:layout_alignTop="@id/warning_icon"
+                android:layout_alignBottom="@id/warning_icon"
+                android:gravity="center_vertical">
 
-            <TextView
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:text="@string/new_plant_warnings"/>
-
-            <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textSize="18sp"
-                        android:id="@+id/warnings"/>
+                    android:id="@+id/warnings"/>
 
                 <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:textSize="18sp"
-                        android:padding="0dp"
-                        android:background="@android:color/transparent"
-                        android:visibility="gone"
-                        android:id="@+id/edit_warnings"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:textSize="18sp"
+                    android:visibility="gone"
+                    android:id="@+id/edit_warnings"/>
 
             </RelativeLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <RelativeLayout
                 android:layout_width="match_parent"
