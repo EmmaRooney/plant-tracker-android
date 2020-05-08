@@ -121,7 +121,7 @@
 
         </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="20dp"
@@ -141,15 +141,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@id/last_watered_icon"
-                android:layout_alignTop="@id/last_watered_icon"
-                android:layout_alignBottom="@id/last_watered_icon"
                 android:gravity="center_vertical"
                 android:textSize="18sp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
@@ -169,15 +166,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@id/next_water_icon"
-                android:layout_alignTop="@id/next_water_icon"
-                android:layout_alignBottom="@id/next_water_icon"
                 android:gravity="center_vertical"
                 android:textSize="18sp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
@@ -192,13 +186,10 @@
                 android:src="@drawable/sun"
                 android:id="@+id/sun_icon"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@id/sun_icon"
-                android:layout_alignTop="@id/sun_icon"
-                android:layout_alignBottom="@id/sun_icon"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -208,18 +199,18 @@
                     android:id="@+id/sunlight"/>
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:textSize="18sp"
                     android:visibility="gone"
                     android:id="@+id/edit_sunlight"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
@@ -234,13 +225,10 @@
                 android:src="@drawable/water"
                 android:id="@+id/water_icon"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@id/water_icon"
-                android:layout_alignTop="@id/water_icon"
-                android:layout_alignBottom="@id/water_icon"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -250,18 +238,18 @@
                     android:id="@+id/water"/>
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:textSize="18sp"
                     android:visibility="gone"
                     android:id="@+id/edit_water"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
@@ -276,13 +264,10 @@
                 android:src="@drawable/fertilizer"
                 android:id="@+id/soil_icon"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@id/soil_icon"
-                android:layout_alignTop="@id/soil_icon"
-                android:layout_alignBottom="@id/soil_icon"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -292,18 +277,18 @@
                     android:id="@+id/soil"/>
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:textSize="18sp"
                     android:visibility="gone"
                     android:id="@+id/edit_soil"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
@@ -318,13 +303,10 @@
                 android:src="@drawable/alert"
                 android:id="@+id/warning_icon"/>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_toEndOf="@id/warning_icon"
-                android:layout_alignTop="@id/warning_icon"
-                android:layout_alignBottom="@id/warning_icon"
                 android:gravity="center_vertical">
 
                 <TextView
@@ -334,16 +316,16 @@
                     android:id="@+id/warnings"/>
 
                 <EditText
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@android:color/transparent"
                     android:textSize="18sp"
                     android:visibility="gone"
                     android:id="@+id/edit_warnings"/>
 
-            </RelativeLayout>
+            </LinearLayout>
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <RelativeLayout
                 android:layout_width="match_parent"

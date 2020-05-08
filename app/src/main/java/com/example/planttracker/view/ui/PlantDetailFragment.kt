@@ -189,27 +189,27 @@ class PlantDetailFragment : Fragment(){
         last_watered.setTypeface(null, Typeface.BOLD)
         next_water_days.setTypeface(null, Typeface.BOLD)
 
-        text_plant_nickname.visibility = View.INVISIBLE
+        text_plant_nickname.visibility = View.GONE
         edit_text_plant_nickname.visibility = View.VISIBLE
         edit_text_plant_nickname.setText(text_plant_nickname.text)
 
-        text_plant_fullname.visibility = View.INVISIBLE
+        text_plant_fullname.visibility = View.GONE
         edit_text_plant_fullname.visibility = View.VISIBLE
         edit_text_plant_fullname.setText(text_plant_fullname.text)
 
-        sunlight.visibility = View.INVISIBLE
+        sunlight.visibility = View.GONE
         edit_sunlight.visibility = View.VISIBLE
         edit_sunlight.setText(sunlight.text)
 
-        water.visibility = View.INVISIBLE
+        water.visibility = View.GONE
         edit_water.visibility = View.VISIBLE
         edit_water.setText(water.text)
 
-        soil.visibility = View.INVISIBLE
+        soil.visibility = View.GONE
         edit_soil.visibility = View.VISIBLE
         edit_soil.setText(soil.text)
 
-        warnings.visibility = View.INVISIBLE
+        warnings.visibility = View.GONE
         edit_warnings.visibility = View.VISIBLE
         edit_warnings.setText(warnings.text)
     }
