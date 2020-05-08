@@ -5,8 +5,10 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Environment
 import android.util.Log
+import android.widget.ImageView
 import java.io.File
 import java.io.FileOutputStream
+import java.lang.ref.WeakReference
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -29,10 +31,11 @@ class ImageUtil {
             fileOutputStream.close()
         }
 
-        fun loadPhoto(filepath: String) : Bitmap? {
+        fun loadPhoto(filepath: String, imageViewReference: WeakReference<ImageView>) : Bitmap? {
             val file = File(filepath)
             if (file.exists()) {
-                return BitmapFactory.decodeFile(file.absolutePath)
+                val bitmapLoaderTask = BitmapLoader(file, imageViewReference)
+                bitmapLoaderTask.execute()
             }
             return null
         }

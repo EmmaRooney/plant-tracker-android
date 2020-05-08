@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.planttracker.R
 import com.example.planttracker.model.data.Plant
 import com.example.planttracker.util.ImageUtil
+import java.lang.ref.WeakReference
 
 /**
  * Connects the PlantModel data to the fragment_plant_list view
@@ -50,7 +51,7 @@ class PlantListAdapter internal constructor(private val context: Context, privat
         holder.daysUntilWaterView.text = currentPlant.nextWater.toString()
 
         if (!currentPlant.photoFilepath.isNullOrBlank()) {
-            holder.plantImageView.setImageBitmap(ImageUtil.loadPhoto(currentPlant.photoFilepath))
+            ImageUtil.loadPhoto(currentPlant.photoFilepath, WeakReference( holder.plantImageView))
         }
 
         // Highlight if plant needs watering

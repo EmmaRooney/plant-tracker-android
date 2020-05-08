@@ -35,6 +35,7 @@ import kotlinx.android.synthetic.main.fragment_plant_detail.btn_cancel
 import kotlinx.android.synthetic.main.fragment_plant_detail.btn_save
 import kotlinx.android.synthetic.main.fragment_plant_detail.view.*
 import java.lang.Exception
+import java.lang.ref.WeakReference
 
 class PlantDetailFragment : Fragment(){
 
@@ -116,7 +117,7 @@ class PlantDetailFragment : Fragment(){
         warnings.text = sharedViewModel.selectedPlant?.warnings
 
         if (!sharedViewModel.selectedPlant?.photoFilepath.isNullOrBlank()) {
-            plant_photo.setImageBitmap(ImageUtil.loadPhoto(sharedViewModel.selectedPlant!!.photoFilepath!!))
+            ImageUtil.loadPhoto(sharedViewModel.selectedPlant!!.photoFilepath!!, WeakReference(plant_photo))
         }
 
         if (sharedViewModel.selectedPlant!!.nextWater == 0) {
