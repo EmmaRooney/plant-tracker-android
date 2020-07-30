@@ -34,6 +34,7 @@ import kotlinx.android.synthetic.main.fragment_plant_detail.*
 import kotlinx.android.synthetic.main.fragment_plant_detail.btn_cancel
 import kotlinx.android.synthetic.main.fragment_plant_detail.btn_save
 import kotlinx.android.synthetic.main.fragment_plant_detail.view.*
+import java.io.File
 import java.lang.Exception
 import java.lang.ref.WeakReference
 
@@ -42,6 +43,7 @@ class PlantDetailFragment : Fragment(){
     private lateinit var sharedViewModel: PlantViewModel
 
     private var IN_EDIT_MODE = false
+    private var newPhotoPath: String? = null
 
     private val REQUEST_IMAGE_CAPTURE: Int = 1
     private val REQUEST_GALLERY_ACCESS: Int = 2
@@ -71,6 +73,7 @@ class PlantDetailFragment : Fragment(){
 
         layout.btn_save.setOnClickListener {
             saveChanges()
+            newPhotoPath = null
             disableEditing()
             setPlantDetails()
         }
@@ -101,8 +104,8 @@ class PlantDetailFragment : Fragment(){
         return layout
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         setPlantDetails()
     }
 
@@ -251,7 +254,7 @@ class PlantDetailFragment : Fragment(){
             sharedViewModel.selectedPlant!!.id,
             edit_text_plant_nickname.text.toString(),
             edit_text_plant_fullname.text.toString(),
-            sharedViewModel.selectedPlant!!.photoFilepath,
+            newPhotoPath,
             last_watered.text.toString(),
             next_water_days.text.toString().toInt(),
             edit_sunlight.text.toString(),
@@ -365,29 +368,29 @@ class PlantDetailFragment : Fragment(){
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-            val imageBitmap = data?.extras!!.get("data") as Bitmap
-            val file = ImageUtil.createImageFile(this.context!!)
-            ImageUtil.savePhoto(imageBitmap, file)
+        lateinit var imageBitmap: Bitmap
 
-            plant_photo.setImageBitmap(imageBitmap)
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+            imageBitmap = data?.extras!!.get("data") as Bitmap
         }
         else if (requestCode == REQUEST_GALLERY_ACCESS && resultCode == Activity.RESULT_OK) {
-            if (data != null) {
-                val imageBitmap : Bitmap
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-                    imageBitmap = ImageDecoder.decodeBitmap(ImageDecoder.createSource(this.activity!!.contentResolver, data.data!!))
-                }
-                else {
-                    imageBitmap = MediaStore.Images.Media.getBitmap(this.activity!!.contentResolver, data.data)
-                }
-
-                val file = ImageUtil.createImageFile(this.context!!)
-                ImageUtil.savePhoto(imageBitmap, file)
-
-                plant_photo.setImageBitmap(imageBitmap)
+            if (data == null) {
+                return
+            }
+            imageBitmap = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                ImageDecoder.decodeBitmap(ImageDecoder.createSource(this.activity!!.contentResolver, data.data!!))
+            } else {
+                MediaStore.Images.Media.getBitmap(this.activity!!.contentResolver, data.data)
             }
         }
+        else {
+            return
+        }
+
+        val file: File = ImageUtil.createImageFile(this.context!!)
+        ImageUtil.savePhoto(imageBitmap, file)
+        newPhotoPath = file.absolutePath
+        ImageUtil.loadPhoto(file.absolutePath, WeakReference(plant_photo))
     }
 
 }
