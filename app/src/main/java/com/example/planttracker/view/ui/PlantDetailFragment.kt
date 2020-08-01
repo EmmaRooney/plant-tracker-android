@@ -72,6 +72,9 @@ class PlantDetailFragment : Fragment(){
         }
 
         layout.btn_save.setOnClickListener {
+            if (newPhotoPath != null) {
+                ImageUtil.deletePhoto(sharedViewModel.selectedPlant!!.photoFilepath)
+            }
             saveChanges()
             newPhotoPath = null
             disableEditing()
@@ -161,6 +164,7 @@ class PlantDetailFragment : Fragment(){
             // Refresh dialog with second round of confirmation text and change btnOk click action
             dialog.text_confirmation.text = getString(R.string.delete_plant_dialog_2)
             btnOk.setOnClickListener {
+                ImageUtil.deletePhoto(sharedViewModel.selectedPlant!!.photoFilepath)
                 sharedViewModel.delete(sharedViewModel.selectedPlant!!)
                 dialog.dismiss()
                 // return to plant list

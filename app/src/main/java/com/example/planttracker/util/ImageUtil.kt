@@ -37,8 +37,15 @@ class ImageUtil {
             return null
         }
 
-        fun deletePhoto(filepath: String) {
-
+        fun deletePhoto(filepath: String?) {
+            if (filepath == null) {
+                return
+            }
+            val file = File(filepath)
+            if (file.exists()) {
+                file.delete()
+            }
+            return
         }
     }
 }
